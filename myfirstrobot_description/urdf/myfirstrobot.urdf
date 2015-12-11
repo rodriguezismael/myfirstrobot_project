@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot name="myfirstrobot">
+
+
+<link name="base_link">
+    <visual>
+	<geometry>
+	 <mesh filename="package://myfirstrobot_description/meshes/one1.stl" />
+	</geometry>
+      <material name="blue">
+        <color rgba="0.5 0.1 0.5 1.0"/>
+      </material>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </visual>
+</link>
+ 
+
+<joint name="servo_joint" type="fixed">
+    <origin xyz="0 0 0.5" />
+    <parent link="base_link"/>
+    <child link="head_link"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="${-170 * M_PI / 180}" upper="${170 * M_PI / 180}" effort="176" />
+</joint>
+
+
+<link name="head_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://myfirstrobot_description/meshes/one2.stl" />
+      </geometry>
+      <material name="Blue">
+        <color rgba="0.1 0.1 0.5 1.0"/>
+      </material>
+      <origin xyz="0 0 0.084" rpy="0 0 0" />
+    </visual>
+</link>
+ 
+</robot>
