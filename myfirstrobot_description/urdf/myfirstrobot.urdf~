@@ -22,16 +22,22 @@
 		<color rgba="0.5 0.1 0.5 1.0"/>
 	</material>
 	<origin xyz="0 0 0" rpy="0 0 0" />
-	</visual>
+	</visual>  
+	<collision>
+	<origin rpy="0 0 0" xyz="0 0 0"/>
+	<geometry>
+	<mesh filename="package://myfirstrobot_description/meshes/xcollisionone2.stl" />
+	</geometry>
+	</collision>
 </link>
  
 
 <joint name="servo_joint" type="revolute">
-	<origin xyz="0 0 0" />
+	<origin xyz="0 0 7.5" />
 	<parent link="base_link"/>
 	<child link="head_link"/>
 	<axis xyz="0.1 0 0"/>
-	<origin rpy="0 0 0" xyz="0 0 -0.5"/>
+	<origin rpy="0 0 0" />
 	<limit effort="0.1" lower="-0.5" upper="0.5" velocity="0.1"/>
 </joint>
 
@@ -44,7 +50,7 @@
 	<material name="Blue">
 		<color rgba="0.1 0.1 0.5 1.0"/>
 	</material>
-	<origin xyz="0 0 0" rpy="0 0 0" />
+	<origin xyz="0 0 -7.5" rpy="0 0 0" />
 	</visual>
 </link>
  
